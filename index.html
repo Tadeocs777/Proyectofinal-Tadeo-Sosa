@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Gastos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Control de Gastos</h1>
+        <nav>
+            <a href="#mesSeleccionado">Seleccionar Mes</a>
+            <a href="#mesesLista">Ver Meses</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="mesSeleccionado">
+            <h3>Selecciona el mes y sueldo</h3>
+            <label for="mesSelect">Mes:</label>
+            <select id="mesSelect">
+                <option value="Enero">Enero</option>
+                <option value="Febrero">Febrero</option>
+                <option value="Marzo">Marzo</option>
+                <option value="Abril">Abril</option>
+                <option value="Mayo">Mayo</option>
+                <option value="Junio">Junio</option>
+                <option value="Julio">Julio</option>
+                <option value="Agosto">Agosto</option>
+                <option value="Septiembre">Septiembre</option>
+                <option value="Octubre">Octubre</option>
+                <option value="Noviembre">Noviembre</option>
+                <option value="Diciembre">Diciembre</option>
+            </select>
+
+            <label for="sueldoInput">Sueldo:</label>
+            <input type="number" id="sueldoInput" placeholder="Sueldo mensual">
+            <button onclick="agregarMes()">Guardar</button>
+        </section>
+
+        <section id="agregarGastos" style="display:none;">
+            <h3>Agregar Gastos</h3>
+            <label for="gastoNombre">Nombre del gasto:</label>
+            <input type="text" id="gastoNombre" placeholder="Nombre del gasto">
+
+            <label for="gastoMonto">Monto:</label>
+            <input type="number" id="gastoMonto" placeholder="Monto del gasto">
+
+            <label for="gastoDivisa">Divisa:</label>
+            <select id="gastoDivisa">
+                <option value="USD">USD</option>
+                <option value="ARS">ARS</option>
+            </select>
+
+            <label for="gastoClasificacion">Clasificación:</label>
+            <select id="gastoClasificacion">
+                <option value="escencial">Escencial</option>
+                <option value="loquiero">Lo quiero</option>
+                <option value="innecesario">Innecesario</option>
+            </select>
+
+            <button onclick="agregarGasto()">Agregar gasto</button>
+            <ul id="gastosLista"></ul>
+            <button onclick="finalizarGastos()">Finalizar</button>
+        </section>
+
+        <section id="mesesLista"></section>
+
+        <section id="resultado" style="display:none;"></section>
+
+        <section id="mesDetalles" style="display:none;"></section>
+    </main>
+
+    <footer>
+        <p>© 2024 Control de Gastos</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
